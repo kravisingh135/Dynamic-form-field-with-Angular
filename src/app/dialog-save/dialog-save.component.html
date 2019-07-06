@@ -1,0 +1,12 @@
+<div class="dialog-wrap">
+  <h4>Congrutulation and thank you for your interest.</h4>
+  <h6>We have received following data</h6>
+  <mat-dialog-content class="content-wrap">    
+      <div *ngFor="let item of journeyDetails | keyvalue">
+          {{item.key | keySplit | titlecase }} : <b>{{item.value}}</b>
+      </div>
+  </mat-dialog-content>          
+  <mat-dialog-actions>
+      <button mat-raised-button color="accent" (click)="close()">Ok</button>
+  </mat-dialog-actions>  
+</div>

@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row">
+      <div class="col-md-8 offset-md-2">
+        <h2 appHeadingColor>About Page</h2>
+        <p>
+          <input type="text" class="form-control" #firstNameInput><br>
+          <button (click)="firstNameInput" mat-raised-button color="accent">Reference Dom</button><br>
+          <span class="ref-data" *ngIf="firstNameInput.value">{{firstNameInput.value}}</span><br>
+        </p>
+        <br>
+        <h3>Rest API Data</h3><br>
+        <table class="table table-bordered table-hover">
+          <thead>
+            <tr>
+              <th scope="col">Number</th>
+              <th scope="col">City</th>
+              <th scope="col">Country</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let dataList of allData; let i = index;">
+              <th scope="row">{{i + 1}}</th>
+              <td>{{dataList.title}}</td>
+              <td>{{dataList.body}}</td>
+            </tr>            
+          </tbody>
+        </table>
+      </div>
+    </div>
+</div>

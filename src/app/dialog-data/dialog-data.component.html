@@ -1,0 +1,11 @@
+<div class="dialog-wrap">
+  <h4>Previous Input Details</h4>
+  <mat-dialog-content class="content-wrap">    
+      <div *ngFor="let item of previousJourneyDetails | keyvalue">
+          {{item.key | keySplit | titlecase }} : <b>{{item.value}}</b>
+      </div>
+  </mat-dialog-content>          
+  <mat-dialog-actions>
+      <button mat-raised-button color="accent" (click)="close()">Close</button>
+  </mat-dialog-actions>  
+</div>

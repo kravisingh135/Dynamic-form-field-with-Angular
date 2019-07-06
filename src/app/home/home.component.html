@@ -1,0 +1,26 @@
+<div class="banner" style="background: url(../assets/banner.jpg)">
+  <h1>An Angular 7 Demo</h1>
+</div>
+<div class="container">
+  <div class="row home">
+      <div class="col-md-8 offset-md-2">
+        <h3>List of popular cities</h3>
+        <table class="table table-bordered table-hover">
+          <thead>
+            <tr>
+              <th scope="col">Number</th>
+              <th scope="col">City</th>
+              <th scope="col">Country</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let cityData of city; let i = index;">
+              <th scope="row">{{i + 1}}</th>
+              <td>{{cityData.name | uppercase}}</td>
+              <td>{{cityData.country | uppercase}}</td>
+            </tr>            
+          </tbody>
+        </table>
+      </div>
+    </div>
+</div>

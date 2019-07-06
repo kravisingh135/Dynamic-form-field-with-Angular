@@ -1,0 +1,39 @@
+<div class="data-choice">
+  <div class="container">
+    <div class="col-md-8 offset-md-2">
+      <h3>Provide your input</h3><br>
+      <form (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+        <div *ngIf="type == 'text'">
+          <label>Full Name</label>
+          <input type="{{type}}" class="form-control" [(ngModel)]="tripDetails.full_Name" name="full_Name">  
+        </div>
+        <div *ngIf="type == 'boolean'">
+          <h5>Reach By</h5>          
+          <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group" [(ngModel)]="tripDetails.reach_By" name="reach_By">
+            <mat-radio-button class="example-radio-button" value="By Air"> By Air </mat-radio-button>
+            <mat-radio-button class="example-radio-button" value="By Rail"> By Rail </mat-radio-button>
+            <mat-radio-button class="example-radio-button" value="By Road"> By Road </mat-radio-button>
+          </mat-radio-group>          
+        </div>
+        <div *ngIf="type == 'select'">
+          <mat-form-field>
+            <mat-label>Place to Visit</mat-label>
+            <mat-select [(ngModel)]="tripDetails.place_To_Visit" name="place_To_Visit">
+              <mat-option value="South India">South India</mat-option>
+              <mat-option value="North India">North India</mat-option>
+              <mat-option value="West India">West India</mat-option>
+              <mat-option value="West India">East India</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div class="form-group"><br>
+          <button mat-raised-button color="accent">Submit</button>
+        </div>
+        <div class="error-field" *ngIf="formError">Please provide you input</div>
+      </form>  
+      <!-- <div class="journey-details" *ngIf="pastJourneyDetails">
+          Previous Journey Details : {{previousJourneyDetails}}                  
+      </div>     -->
+    </div>
+  </div>    
+</div>
